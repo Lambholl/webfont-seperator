@@ -24,7 +24,7 @@ a = 0
 for i in [i.replace(', ', ',') for i in ranges]:
     outfilename = font_out.format(str(uuid.uuid4()))
     for n in ['woff2', 'woff']:
-        cmd = 'pyftsubset '+font_file+' "--unicodes='+i+'" --output-file="'+dir_out+'/'+outfilename+n+'"'
+        cmd = 'pyftsubset "'+font_file+'" --ignore-missing-glyphs "--unicodes='+i+'" --output-file="'+dir_out+'/'+outfilename+n+'"'
         os.system(cmd)
     with open(css_out, 'a', encoding='utf-8') as fb:
         for line in [
