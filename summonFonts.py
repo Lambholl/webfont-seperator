@@ -23,7 +23,7 @@ os.makedirs(dir_out, exist_ok=True)
 a = 0
 for i in [i.replace(', ', ',') for i in ranges]:
     outfilename = font_out.format(str(uuid.uuid4()))
-    for n in ['woff2', 'woff']:
+    for n in ['woff']:
         cmd = 'pyftsubset "'+font_file+'" --ignore-missing-glyphs "--unicodes='+i+'" --output-file="'+dir_out+'/'+outfilename+n+'"'
         os.system(cmd)
     with open(css_out, 'a', encoding='utf-8') as fb:
@@ -32,8 +32,7 @@ for i in [i.replace(', ', ',') for i in ranges]:
             '@font-face {',
             '  font-family: \'Sarasa Gothic SC\';',
             '  font-style: normal;',
-            '  src: url('+dir_url+'+outfilename+'woff2) format(\'woff2\'),',
-            '       url('+dir_url+'+outfilename+'woff) format(\'woff\');',
+            '  src: url('+dir_url+outfilename+'woff) format(\'woff\');',
             '  unicode-range: '+i.replace(',', ', ')+';',
             '}'
         ]:
