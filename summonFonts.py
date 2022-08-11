@@ -8,6 +8,7 @@ font_out  = 'sarasa-gothic-sc-regular-{0}.'  #字体输出文件名模板
 dir_out = 'SarasaGothicSC'  # 字体输出文件夹
 dir_url = 'https://www.example.com:443/Fonts/SarasaGothicSC/' # 存储字体文件的路径的访问地址 (记得允许跨域访问)
 font_family = 'Sarasa Gothic TC'  # 字体名称
+font_style  = 'normal'            # 字体样式名称 可选 normal, italic 等
 
 # 代码区  Codings
 
@@ -32,7 +33,7 @@ for i in [i.replace(', ', ',') for i in ranges]:
             '/*' + str(a) + '*/',
             '@font-face {',
             '  font-family: \''+font_family+'\';',
-            '  font-style: normal;',
+            '  font-style: '+font_style+';',
             '  src: url('+dir_url+outfilename+'woff) format(\'woff\');',
             '  unicode-range: '+i.replace(',', ', ')+';',
             '}'
