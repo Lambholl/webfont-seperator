@@ -31,7 +31,7 @@ for i in [i.replace(', ', ',') for i in ranges]:
         for line in [
             '/*' + str(a) + '*/',
             '@font-face {',
-            '  font-family: \''+font-family+'\';',
+            '  font-family: \''+font_family+'\';',
             '  font-style: normal;',
             '  src: url('+dir_url+outfilename+'woff) format(\'woff\');',
             '  unicode-range: '+i.replace(',', ', ')+';',
