@@ -11,9 +11,10 @@
 * 请注意，`CSS`支持对一个字体设置`Normal`和`Italic`两种样式，而本工具一次只能对其中一种进行处理；如需对两种样式都进行处理，请修改设置运行两次
 
 ## 使用方法
-1. 请先安装`fonttools`:
+1. 请先安装`fonttools`和`brotli`:
 ```
 pip install fonttools
+pip install brotli
 ```
 2. 然后，请确保`pyftsubset`所在的文件夹在您的系统的`环境变量 Path`中
 3. 将您需要应用的分割方式的`CSS`文件从`Google Fonts`上下载下来并保存在本地
