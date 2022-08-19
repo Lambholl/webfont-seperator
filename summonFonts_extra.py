@@ -70,8 +70,8 @@ def produce(i):
         fb.close()
 
 ranges2 = []
-for i in range(math.ceil(len(ranges_append)/200)):
-    n = ranges_append[i*200:(i+1)*200]
+for i in range(math.ceil(len(ranges_append)/125)):
+    n = ranges_append[i*125:(i+1)*125]
     e = ''
     for b in n:
         e += b+','
