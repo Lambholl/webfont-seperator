@@ -3,7 +3,7 @@ from fontTools.ttLib import TTFont
 
 # 设置项  Settings
 css_files = ['notosanshk.css','notosanstc.css','notosanssc.css']   # 对应的谷歌 Webfont css 文件
-css_file = 'notosansjp.ass'
+css_file = 'notosansjp.css'
 css_out  = 'sarasa-gothic-j.css'  # 输出的 css 文件
 font_file = 'sarasa-gothic-j-regular.ttf'   #字体输入文件名
 font_out  = 'sarasa-gothic-j-regular-{0}.'  #字体输出文件名模板
@@ -26,7 +26,7 @@ for i in css_files:
         for range1 in range0.split(', '):
             if not range1 in all_ranges:
                 all_ranges.append(range1)
-with open(i, 'r', encoding='utf-8') as fb:
+with open(css_file, 'r', encoding='utf-8') as fb:
     origin_css = fb.read()
     fb.close()
 p = '(?<=unicode-range: ).+?(?=;)'
